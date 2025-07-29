@@ -8,6 +8,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { FloatingAIButton } from "@/components/floating-ai-button"
 import { CartProvider } from "@/components/cart-provider"
+import { MouseFollower } from "@/components/mouse-follower"
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
@@ -29,6 +30,7 @@ export default function RootLayout({
           <CartProvider>
             <Navigation />
             <main className="">{children}</main>
+            <MouseFollower /> 
             {/* <Footer /> */}
             {/* <FloatingAIButton /> */}
             {/* <Toaster /> */}

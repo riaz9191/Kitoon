@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function HomePage() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-950 text-gray-900 dark:text-gray-100 relative overflow-hidden
-      before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] dark:before:bg-[radial-gradient(#6b7280_1px,transparent_1px)] before:bg-[size:16px_16px] before:opacity-40 dark:before:opacity-30
+      before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] dark:before:bg-[radial-gradient(#6b7280_1px,transparent_1px)] before:bg-[size:16px_16px] before:opacity-30 dark:before:opacity-20
     >
     ">
       {/* Geometric Background Shapes */}

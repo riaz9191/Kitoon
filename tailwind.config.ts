@@ -126,12 +126,17 @@ const config: Config = {
             transform: "translate(0, 0) rotate(180deg)",
           },
         },
+        "spin-slow": {
+          from: { transform: "rotate(0deg)" },
+          to: { transform: "rotate(360deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient-shift": "gradient-shift 15s ease infinite alternate",
         "shape-move": "shape-move 20s linear infinite alternate",
+        "spin-slow": "spin-slow 10s linear infinite",
       },
     },
   },
