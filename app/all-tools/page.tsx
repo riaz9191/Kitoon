@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, ScanText, ImageIcon, FileText, Code, QrCode, FileType, Palette, Lock, Pilcrow, Link2, Type, Clock, Ruler, Key, Search } from 'lucide-react';
+import { ArrowRight, ScanText, ImageIcon, FileText, Code, QrCode, FileType, Palette, Lock, Pilcrow, Link2, Type, Clock, Ruler, Key, Search, Table, Brackets, Contrast, Star, Map, Calendar, CalendarDays } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -49,6 +49,26 @@ const tools = [
   { name: 'Text Diff Checker', description: 'Compare two text inputs and highlight differences', href: '/tools/text-diff-checker', icon: <FileText className='w-8 h-8 mb-4 text-blue-500' />, category: 'Text Tools' },
   { name: 'Line Sorter', description: 'Sort lines of text alphabetically or by length', href: '/tools/line-sorter', icon: <FileText className='w-8 h-8 mb-4 text-green-500' />, category: 'Text Tools' },
   { name: 'Duplicate Line Remover', description: 'Remove duplicate lines from text', href: '/tools/duplicate-line-remover', icon: <FileText className='w-8 h-8 mb-4 text-red-500' />, category: 'Text Tools' },
+  { name: 'CSV to Markdown Converter', description: 'Convert CSV data to Markdown table format', href: '/tools/csv-to-markdown-converter', icon: <Table className='w-8 h-8 mb-4 text-purple-500' />, category: 'Converters' },
+  { name: 'JSON to CSV Converter', description: 'Convert JSON data to CSV format', href: '/tools/json-to-csv-converter', icon: <FileText className='w-8 h-8 mb-4 text-orange-500' />, category: 'Converters' },
+  { name: 'Image to WebP Converter', description: 'Convert images to WebP format', href: '/tools/image-to-webp-converter', icon: <ImageIcon className='w-8 h-8 mb-4 text-blue-500' />, category: 'Image Tools' },
+  { name: 'WebP to Image Converter', description: 'Convert WebP images to other formats', href: '/tools/webp-to-image-converter', icon: <ImageIcon className='w-8 h-8 mb-4 text-green-500' />, category: 'Image Tools' },
+  { name: 'Color Contrast Checker', description: 'Check color contrast for accessibility', href: '/tools/color-contrast-checker', icon: <Contrast className='w-8 h-8 mb-4 text-red-500' />, category: 'Other Tools' },
+  { name: 'Star Rating Generator', description: 'Generate star rating SVG/HTML', href: '/tools/star-rating-generator', icon: <Star className='w-8 h-8 mb-4 text-yellow-500' />, category: 'Generators' },
+  { name: 'Google Maps URL Generator', description: 'Generate Google Maps URLs', href: '/tools/google-maps-url-generator', icon: <Map className='w-8 h-8 mb-4 text-indigo-500' />, category: 'Generators' },
+  { name: 'Date Calculator', description: 'Calculate differences between dates', href: '/tools/date-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-purple-500' />, category: 'Other Tools' },
+  { name: 'Working Days Calculator', description: 'Calculate working days between two dates', href: '/tools/working-days-calculator', icon: <CalendarDays className='w-8 h-8 mb-4 text-pink-500' />, category: 'Other Tools' },
+  { name: 'Age Calculator', description: 'Calculate age from a birth date', href: '/tools/age-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-teal-500' />, category: 'Other Tools' },
+  { name: 'CSV to Markdown Converter', description: 'Convert CSV data to Markdown table format', href: '/tools/csv-to-markdown-converter', icon: <Table className='w-8 h-8 mb-4 text-purple-500' />, category: 'Converters' },
+  { name: 'JSON to CSV Converter', description: 'Convert JSON data to CSV format', href: '/tools/json-to-csv-converter', icon: <FileText className='w-8 h-8 mb-4 text-orange-500' />, category: 'Converters' },
+  { name: 'Image to WebP Converter', description: 'Convert images to WebP format', href: '/tools/image-to-webp-converter', icon: <ImageIcon className='w-8 h-8 mb-4 text-blue-500' />, category: 'Image Tools' },
+  { name: 'WebP to Image Converter', description: 'Convert WebP images to other formats', href: '/tools/webp-to-image-converter', icon: <ImageIcon className='w-8 h-8 mb-4 text-green-500' />, category: 'Image Tools' },
+  { name: 'Color Contrast Checker', description: 'Check color contrast for accessibility', href: '/tools/color-contrast-checker', icon: <Contrast className='w-8 h-8 mb-4 text-red-500' />, category: 'Other Tools' },
+  { name: 'Star Rating Generator', description: 'Generate star rating SVG/HTML', href: '/tools/star-rating-generator', icon: <Star className='w-8 h-8 mb-4 text-yellow-500' />, category: 'Generators' },
+  { name: 'Google Maps URL Generator', description: 'Generate Google Maps URLs', href: '/tools/google-maps-url-generator', icon: <Map className='w-8 h-8 mb-4 text-indigo-500' />, category: 'Generators' },
+  { name: 'Date Calculator', description: 'Calculate differences between dates', href: '/tools/date-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-purple-500' />, category: 'Other Tools' },
+  { name: 'Working Days Calculator', description: 'Calculate working days between two dates', href: '/tools/working-days-calculator', icon: <CalendarDays className='w-8 h-8 mb-4 text-pink-500' />, category: 'Other Tools' },
+  { name: 'Age Calculator', description: 'Calculate age from a birth date', href: '/tools/age-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-teal-500' />, category: 'Other Tools' },
 ];
 
 const categories = [
@@ -138,7 +158,7 @@ export default function AllToolsPage() {
               <p className='text-lg text-gray-600 mb-8'>
                 {category.description}
               </p>
-              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8'>
+              <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-8'>
                 {tools
                   .filter((tool) => tool.category === category.name)
                   .map((tool) => (

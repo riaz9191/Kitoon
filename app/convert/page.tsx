@@ -3,6 +3,7 @@
 import * as React from "react";
 // import "react-toastify/dist/ReactToastify.css";
 import { ArrowLeft, ArrowRight, Copy, RefreshCw } from "lucide-react";
+import Link from "next/link";
 
 // Conversion maps from the working code
 const bijoy_string_conversion_map: { [key: string]: string } = {
@@ -743,7 +744,10 @@ export default function BanglaConverter() {
   };
 
   return (
-    <div className='min-h-screen w-full bg-gray-100 dark:bg-gray-900 p-4 sm:p-8 flex flex-col items-center'>
+    <div className='min-h-screen w-full bg-gray-100 dark:bg-gray-900 p-4 sm:p-8 flex flex-col items-center relative'>
+      <Link href="/all-tools" className="absolute top-4 right-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors">
+        <ArrowLeft size={24} />
+      </Link>
       {/* <ToastContainer */}
         {/* position='top-right'
         autoClose={3000}
