@@ -109,11 +109,29 @@ const config: Config = {
             "background-position": "0% 50%",
           },
         },
+        "shape-move": {
+          "0%": {
+            transform: "translate(0, 0) rotate(0deg)",
+          },
+          "25%": {
+            transform: "translate(20px, -20px) rotate(45deg)",
+          },
+          "50%": {
+            transform: "translate(0, 20px) rotate(90deg)",
+          },
+          "75%": {
+            transform: "translate(-20px, -20px) rotate(135deg)",
+          },
+          "100%": {
+            transform: "translate(0, 0) rotate(180deg)",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
         "gradient-shift": "gradient-shift 15s ease infinite alternate",
+        "shape-move": "shape-move 20s linear infinite alternate",
       },
     },
   },

@@ -5,8 +5,18 @@ import Link from "next/link";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-950 text-gray-900 dark:text-gray-100">
-      <div className="container mx-auto px-4 py-16 pt-24">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-black dark:to-gray-950 text-gray-900 dark:text-gray-100 relative overflow-hidden
+      before:content-[''] before:absolute before:inset-0 before:bg-[radial-gradient(#a1a1aa_1px,transparent_1px)] dark:before:bg-[radial-gradient(#6b7280_1px,transparent_1px)] before:bg-[size:16px_16px] before:opacity-40 dark:before:opacity-30
+    >
+    ">
+      {/* Geometric Background Shapes */}
+      <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-1000"></div>
+      <div className="absolute bottom-1/3 right-1/4 w-80 h-80 bg-purple-200 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-3000"></div>
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-pink-200 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-5000"></div>
+      <div className="absolute top-1/3 right-1/2 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-2000"></div>
+      <div className="absolute bottom-1/4 left-1/4 w-60 h-60 bg-yellow-200 rounded-full mix-blend-multiply filter blur-2xl opacity-40 animate-pulse animation-delay-4000"></div>
+
+      <div className="container mx-auto px-4 py-16 pt-24 relative z-10">
         {/* Hero Section */}
         <section className="text-center mb-16">
           <h1 className="text-6xl font-extrabold mb-4 leading-tight">
