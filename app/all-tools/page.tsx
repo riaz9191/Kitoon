@@ -1,5 +1,5 @@
 "use client";
-import { ArrowRight, ScanText, ImageIcon, FileText, Code, QrCode, FileType, Palette, Lock, Pilcrow, Link2, Type, Clock, Ruler, Key, Search, Table, Brackets, Contrast, Star, Map, Calendar, CalendarDays } from 'lucide-react';
+import { ArrowRight, ScanText, ImageIcon, FileText, Code, QrCode, FileType, Palette, Lock, Pilcrow, Link2, Type, Clock, Ruler, Key, Search, Table, Brackets, Contrast, Star, Map, Calendar, CalendarDays, Volume2, Mic, CheckCircle, Eye, Binary, Shuffle, QrCodeIcon } from 'lucide-react';
 import Link from 'next/link';
 import React, { useState, useEffect, useRef } from 'react';
 
@@ -69,6 +69,26 @@ const tools = [
   { name: 'Date Calculator', description: 'Calculate differences between dates', href: '/tools/date-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-purple-500' />, category: 'Other Tools' },
   { name: 'Working Days Calculator', description: 'Calculate working days between two dates', href: '/tools/working-days-calculator', icon: <CalendarDays className='w-8 h-8 mb-4 text-pink-500' />, category: 'Other Tools' },
   { name: 'Age Calculator', description: 'Calculate age from a birth date', href: '/tools/age-calculator', icon: <Calendar className='w-8 h-8 mb-4 text-teal-500' />, category: 'Other Tools' },
+  { name: 'Text to Speech', description: 'Convert text into spoken audio', href: '/tools/text-to-speech', icon: <Volume2 className='w-8 h-8 mb-4 text-orange-500' />, category: 'Text Tools' },
+  { name: 'Speech to Text', description: 'Convert spoken audio into text', href: '/tools/speech-to-text', icon: <Mic className='w-8 h-8 mb-4 text-blue-500' />, category: 'Text Tools' },
+  { name: 'Barcode Generator', description: 'Create various types of barcodes', href: '/tools/barcode-generator', icon: <QrCodeIcon className='w-8 h-8 mb-4 text-green-500' />, category: 'Generators' },
+  { name: 'Online Stopwatch', description: 'A simple stopwatch tool', href: '/tools/stopwatch', icon: <Clock className='w-8 h-8 mb-4 text-red-500' />, category: 'Other Tools' },
+  { name: 'Online Timer', description: 'A simple timer tool', href: '/tools/timer', icon: <Clock className='w-8 h-8 mb-4 text-purple-500' />, category: 'Other Tools' },
+  { name: 'Random Number Generator', description: 'Generate random numbers within a specified range', href: '/tools/random-number-generator', icon: <CheckCircle className='w-8 h-8 mb-4 text-yellow-500' />, category: 'Generators' },
+  { name: 'Color Blindness Simulator', description: 'Simulate different types of color blindness', href: '/tools/color-blindness-simulator', icon: <Eye className='w-8 h-8 mb-4 text-indigo-500' />, category: 'Other Tools' },
+  { name: 'Website Screenshot Generator', description: 'Take a screenshot of any website', href: '/tools/website-screenshot', icon: <ImageIcon className='w-8 h-8 mb-4 text-teal-500' />, category: 'Image Tools' },
+  { name: 'Favicon Extractor', description: 'Extract favicon from a website', href: '/tools/favicon-extractor', icon: <ImageIcon className='w-8 h-8 mb-4 text-gray-500' />, category: 'Image Tools' },
+  { name: 'Image Watermarker', description: 'Add watermarks to images', href: '/tools/image-watermarker', icon: <ImageIcon className='w-8 h-8 mb-4 text-pink-500' />, category: 'Image Tools' },
+  { name: 'Binary to Text Converter', description: 'Convert binary code to readable text', href: '/tools/binary-to-text', icon: <Binary className='w-8 h-8 mb-4 text-blue-500' />, category: 'Developer Tools' },
+  { name: 'Text to Binary Converter', description: 'Convert text to binary code', href: '/tools/text-to-binary', icon: <Binary className='w-8 h-8 mb-4 text-green-500' />, category: 'Developer Tools' },
+  { name: 'Random String Generator', description: 'Generate random strings of specified length and characters', href: '/tools/random-string-generator', icon: <Shuffle className='w-8 h-8 mb-4 text-purple-500' />, category: 'Generators' },
+  { name: 'Image to ASCII Art Converter', description: 'Convert images into ASCII art', href: '/tools/image-to-ascii', icon: <ImageIcon className='w-8 h-8 mb-4 text-yellow-500' />, category: 'Image Tools' },
+  { name: 'Color Blender', description: 'Blend two colors to create a new one', href: '/tools/color-blender', icon: <Palette className='w-8 h-8 mb-4 text-orange-500' />, category: 'Other Tools' },
+  { name: 'CSS to Tailwind Converter', description: 'Convert plain CSS to Tailwind CSS classes', href: '/tools/css-to-tailwind', icon: <Code className='w-8 h-8 mb-4 text-red-500' />, category: 'Developer Tools' },
+  { name: 'JSON Minifier', description: 'Minify JSON data to reduce file size', href: '/tools/json-minifier', icon: <Code className='w-8 h-8 mb-4 text-indigo-500' />, category: 'Developer Tools' },
+  { name: 'XML Minifier', description: 'Minify XML data to reduce file size', href: '/tools/xml-minifier', icon: <Code className='w-8 h-8 mb-4 text-teal-500' />, category: 'Developer Tools' },
+  { name: 'URL Encoder/Decoder', description: 'Encode or decode URL strings', href: '/tools/url-encoder-decoder', icon: <Link2 className='w-8 h-8 mb-4 text-gray-500' />, category: 'Developer Tools' },
+  { name: 'UUID Validator', description: 'Validate Universally Unique Identifiers', href: '/tools/uuid-validator', icon: <Key className='w-8 h-8 mb-4 text-pink-500' />, category: 'Developer Tools' },
 ];
 
 const categories = [
