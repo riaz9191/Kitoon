@@ -14,9 +14,9 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" })
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" })
 
 export const metadata: Metadata = {
-  title: "Bangla Text Converter",
-  description: "A simple tool to convert Bangla text.",
-}
+  title: "Online Toolkit - Kitoon",
+  description: "A collection of free online tools for various tasks.",
+};
 
 export default function RootLayout({
   children,
