@@ -27,7 +27,7 @@ export default function Base64ImageViewerPage() {
         };
         img.onerror = () => {
           setImageUrl(null);
-          setError('Invalid Base64 image data. Please include data:image/<type>;base64, prefix or ensure it's a valid Base64 string.');
+          setError('Invalid Base64 image data. Please include data:image/&lt;type&gt;;base64, prefix or ensure it\'s a valid Base64 string.');
         };
         img.src = potentialImageUrl;
       }

@@ -9,14 +9,14 @@ export default function MarkdownToHtmlConverterPage() {
   const [markdownInput, setMarkdownInput] = useState('');
   const [htmlOutput, setHtmlOutput] = useState('');
 
-  const convertMarkdownToHtml = (input: string) => {
-    setHtmlOutput(marked(input));
+  const convertMarkdownToHtml = async (input: string) => {
+    const result = await marked(input);
+    setHtmlOutput(result);
   };
-
-  const handleMarkdownInputChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+  const handleMarkdownInputChange = async (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const input = e.target.value;
     setMarkdownInput(input);
-    convertMarkdownToHtml(input);
+    await convertMarkdownToHtml(input);
   };
 
   return (
@@ -24,7 +24,7 @@ export default function MarkdownToHtmlConverterPage() {
       <div className="container mx-auto">
         <div className="absolute top-4 left-4">
           <BackButton />
-        }
+        </div>
         <div className="text-center mb-12">
           <h1 className="text-5xl font-bold text-gray-800">Markdown to HTML Converter</h1>
           <p className="text-lg text-gray-600 mt-2">Convert Markdown content to HTML format.</p>
@@ -60,4 +60,5 @@ export default function MarkdownToHtmlConverterPage() {
       </div>
     </div>
   );
+
 }
